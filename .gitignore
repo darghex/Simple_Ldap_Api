@@ -7,6 +7,9 @@ __pycache__/
 .idea/
 .idea
 .idea/*
+._idea/
+._idea
+._idea/*
 
 #security
 *.json
