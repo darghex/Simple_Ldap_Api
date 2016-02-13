@@ -146,8 +146,10 @@ class myldap(object):
             print 'Lo sentimos lo que has buscado no ha sido encontrado'
 
 
-Nop = myldap('192.168.10.28', 'cn=Administrador,cn=Users,dc=ITFIPSALAS,dc=LOCAL', 'yourpass')
-print('fin')
-consulta = Nop.ldapsearch(search_by_name('admin'),domain='WWW.ITFIPSALAS.LOCAL')
-print Nop.getsearch(consulta,show_mail())
+#Nop = myldap('192.168.10.28', 'cn=Administrador,cn=Users,dc=ITFIPSALAS,dc=LOCAL', 'Itfip2015')
+#print('fin')
+#consulta = Nop.ldapsearch(search_by_name('admin'),domain='WWW.ITFIPSALAS.LOCAL')
+#print Nop.getsearch(consulta,show_mail())
+
+
 #Nop.ldapadd()
