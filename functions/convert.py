@@ -9,7 +9,8 @@ convert functions
 
 .. note:: see https://msdn.microsoft.com/en-us/library/aa366101(v=vs.85).aspx
 
-All functions this named has been utility in the programation of the api, know there aren't necessary for use the api
+All functions named bellow has been utility in the coding of the api
+you must know there aren't necessary for use the api, but can help you
 """
 
 
