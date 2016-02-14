@@ -4,6 +4,7 @@
 ---------------------------------------------------------
 convert functions
 ---------------------------------------------------------
+
 .. warning:: Before to use our convert module, you should know that is a distinguished name (dn) and your structure
 
 .. note:: see https://msdn.microsoft.com/en-us/library/aa366101(v=vs.85).aspx

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Welcome to Simple Ldap Api-0.5 documentation! &mdash; LdapSeveralApi 1.0.1 documentation</title>
+    <title>Simple Ldap Api-0.5 Documentation &mdash; Simple Ldap Api-0.5 0.5.1 documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.0.1',
+        VERSION:     '0.5.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="LdapSeveralApi 1.0.1 documentation" href="#" />
+    <link rel="top" title="Simple Ldap Api-0.5 0.5.1 documentation" href="#" />
    
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
@@ -36,8 +36,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="welcome-to-simple-ldap-api-0-5-documentation">
-<h1>Welcome to Simple Ldap Api-0.5 documentation!<a class="headerlink" href="#welcome-to-simple-ldap-api-0-5-documentation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="simple-ldap-api-0-5-documentation">
+<h1>Simple Ldap Api-0.5 Documentation<a class="headerlink" href="#simple-ldap-api-0-5-documentation" title="Permalink to this headline">¶</a></h1>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul class="simple">
@@ -62,11 +62,11 @@ and it should print the mail.. as <a class="reference external" href="mailto:nar
 <dl class="method">
 <dt id="Appl.myldap.ldapsearch">
 <code class="descname">ldapsearch</code><span class="sig-paren">(</span><em>self</em>, <em>attributeandsearch</em>, <em>**kwargs</em><span class="sig-paren">)</span> &rarr; dict<a class="headerlink" href="#Appl.myldap.ldapsearch" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method return a dict with the information wich will be extracted with another method</p>
+<dd><p>This method return a dict with the information wich will be extracted with another getsearch</p>
 <p>atrributeandsearch: is a tuple (x=n) where x is the attribute and n the value for search.. For example
 I want search (<a class="reference external" href="mailto:mail=narvaez&#37;&#52;&#48;hotmail&#46;com">mail=narvaez<span>&#64;</span>hotmail<span>&#46;</span>com</a>) or you can use, the &#8216;search methods&#8217; stored in search_methods module...
 with methods only should write, search_by_mail(<a class="reference external" href="mailto:narvaez&#37;&#52;&#48;hotmail&#46;com">narvaez<span>&#64;</span>hotmail<span>&#46;</span>com</a>)...according select function</p>
-<p><a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs could specify the domain that you want use, for example, ... domain=&#8217;dc=itfip,dc=local&#8217;
+<p>** kwargs could specify the domain that you want use, for example, ... domain=&#8217;dc=itfip,dc=local&#8217;
 or anything url, domain=&#8217;www.myexample.com&#8217;</p>
 </dd></dl>
 
@@ -112,7 +112,7 @@ or anything url, domain=&#8217;www.myexample.com&#8217;</p>
 <h2>search and show functions<a class="headerlink" href="#search-and-show-functions" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">the followings the methods are utility in ldapsearch and getsearch functions the Appl module</p>
+<p class="last">the followings the functions are utility in ldapsearch and getsearch methods of Appl module</p>
 </div>
 </div>
 <span class="target" id="module-functions.search_this"></span><div class="section" id="search-for-ldapsearch-function">
@@ -210,7 +210,7 @@ the alternative domain, is default your domain that you used construct the conne
         <div class="sphinxsidebarwrapper">
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Welcome to Simple Ldap Api-0.5 documentation!</a><ul>
+<li><a class="reference internal" href="#">Simple Ldap Api-0.5 Documentation</a><ul>
 <li><a class="reference internal" href="#convert-functions">convert functions</a></li>
 <li><a class="reference internal" href="#search-and-show-functions">search and show functions</a></li>
 <li><a class="reference internal" href="#search-for-ldapsearch-function">search for ldapsearch function</a></li>
@@ -252,7 +252,7 @@ the alternative domain, is default your domain that you used construct the conne
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2015, Mateo B.
+      &copy;2016, Mateo Bohorquez.
       
       |
       Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.5</a>

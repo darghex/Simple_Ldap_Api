@@ -36,13 +36,13 @@ class myldap(object):
 
         ldapsearch(self,attributeandsearch, **kwargs) -> dict
 
-        This method return a dict with the information wich will be extracted with another method
+        This method return a dict with the information wich will be extracted with another getsearch
 
         atrributeandsearch: is a tuple (x=n) where x is the attribute and n the value for search.. For example
         I want search (mail=narvaez@hotmail.com) or you can use, the 'search methods' stored in search_methods module...
         with methods only should write, search_by_mail(narvaez@hotmail.com)...according select function
 
-        **kwargs could specify the domain that you want use, for example, ... domain='dc=itfip,dc=local'
+        ** kwargs could specify the domain that you want use, for example, ... domain='dc=itfip,dc=local'
         or anything url, domain='www.myexample.com'
         """
         try:
@@ -56,7 +56,8 @@ class myldap(object):
                     print(newdn)
                     base = newdn
                 else:
-                    raise NameError('Has escrito un dominio invalido, asegurate de no tener espacios, por ejemplo dc=ejemplo,dc=com')
+                    raise NameError('Has escrito un dominio invalido, asegurate de no tener espacios,'
+                                    ' por ejemplo dc=ejemplo,dc=com')
             else:
                 base = myldap.domain  # default domain
             criteria = attributeandsearch
