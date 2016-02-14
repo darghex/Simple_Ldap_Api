@@ -13,6 +13,17 @@ Contents:
 
 .. automodule:: Appl
 
+
+Requeriments
+============
+
+    * ``python 2.7``
+    * ``install libsasl2-dev python-dev libldap2-dev libssl-dev``
+    * ``pip install python-ldap``
+
+
+
+
 .. autoclass:: myldap
    :members:
 
