@@ -49,8 +49,9 @@
 <dd><dl class="method">
 <dt id="Appl.myldap.getsearch">
 <code class="descname">getsearch</code><span class="sig-paren">(</span><em>self</em>, <em>ldapsearch</em>, <em>attributetosearch=attributedb</em><span class="sig-paren">)</span> &rarr; array<a class="headerlink" href="#Appl.myldap.getsearch" title="Permalink to this definition">¶</a></dt>
-<dd><p>this method  also can return a array with the found info but need to ldapsearch data, and another parameter for obtain the information
-for example:
+<dd><p>this method can return a array with the found information in the search, but need to ldapsearch data,
+and another parameter for obtain the information</p>
+<p>for example:
 x=[[&#8216;mail&#8217;, [<a class="reference external" href="mailto:'narvaez&#37;&#52;&#48;hotmail&#46;com">'narvaez<span>&#64;</span>hotmail<span>&#46;</span>com</a>&#8216;]], [&#8216;displayName&#8217;, [&#8216;B2-E1&#8217;]]]</p>
 <p>where X is the result and you can use X[0][1][0]
 and it should print the mail.. as <a class="reference external" href="mailto:narvaez&#37;&#52;&#48;hotmail&#46;com">narvaez<span>&#64;</span>hotmail<span>&#46;</span>com</a></p>
