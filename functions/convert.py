@@ -1,24 +1,8 @@
 # /usr/bin/env python 2.7
-"""
-
----------------------------------------------------------
-convert functions
----------------------------------------------------------
-
-.. warning:: Before to use our convert module, you should know that is a distinguished name (dn) and your structure
-
-.. note:: see https://msdn.microsoft.com/en-us/library/aa366101(v=vs.85).aspx
-
-All functions this named has been utility in the programation of the api, know there aren't necessary for use the api
-"""
 
 
 def to_domain(dn):
-    """
 
-    to_domain(dn) -> String
-    this function convert dn with only domainComponent to domain
-    """
     import re
     dn = dn.split(',')
     domain = []
@@ -31,11 +15,7 @@ def to_domain(dn):
 
 
 def to_distinguished_name(domain_url):
-    """
 
-    to_distinguished_name(domain_url) -> String
-    this function convert domain to dn with only domainComponent
-    """
     domain_url = domain_url.split('.')
     dn = []
     for x in domain_url:
@@ -46,11 +26,7 @@ def to_distinguished_name(domain_url):
 
 
 def is_domain_dn(dn):
-    """
 
-    is_domain_dn(dn) -> boolean
-    this function verify if you dn is a dn with only domainComponent
-    """
     import re
     exp = r"((dc=[a-zA-Z0-9\-]+[\,]{1})+(dc=[a-zA-Z0-9\-]+)$)"
     dnsearch = re.compile(exp)
@@ -61,11 +37,7 @@ def is_domain_dn(dn):
 
 
 def is_domain_url(domain_url):
-    """
 
-    is_domain_url(domain_url) -> boolean
-    this function verify if is url
-    """
     import re
     www = re.compile(r"(([a-zA-Z0-9\-]+[\.]{1})+([a-zA-Z0-9\-]+)$)")
     if www.search(domain_url):

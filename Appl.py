@@ -1,5 +1,10 @@
 # /usr/bin/env python 2.7
 
+####################### Requeriments: ################################
+# pip install python-ldap
+# install libsasl2-dev python-dev libldap2-dev libssl-dev
+######################################################################
+
 import ldap
 
 from functions.convert import *
@@ -18,12 +23,7 @@ class myldap(object):
         self.__connect(ip,dn,password,port)
 
     def __connect(self, ip, dn, password, port):
-        """
 
-        ip should be a string
-        dn shouldn't have spaces
-        password you must specify
-        """
         try:
             self.conn=ldap.initialize("ldap://"+ip+":"+port)
             self.conn.simple_bind(dn, password)  # simple bind changed
@@ -32,19 +32,6 @@ class myldap(object):
             print('Error al conectar a ldap')
 
     def ldapsearch(self, attributeandsearch, **kwargs):
-        """
-
-        ldapsearch(self,attributeandsearch, **kwargs) -> dict
-
-        This method return a dict with the information wich will be extracted with another getsearch
-
-        atrributeandsearch: is a tuple (x=n) where x is the attribute and n the value for search.. For example
-        I want search (mail=narvaez@hotmail.com) or you can use, the 'search methods' stored in search_methods module...
-        with methods only should write, search_by_mail(narvaez@hotmail.com)...according select function
-
-        ** kwargs could specify the domain that you want use, for example, ... domain='dc=itfip,dc=local'
-        or anything url, domain='www.myexample.com'
-        """
         try:
             self.conn.protocol_version = ldap.VERSION3
             self.conn.set_option(ldap.OPT_REFERRALS,0)
@@ -68,10 +55,10 @@ class myldap(object):
             return results[0]
         finally:
             pass
-            #self.conn.unbind(), changed because need the conections for ldapadd
+            # self.conn.unbind(), changed because need the conections for ldapadd
 
     def ldapadd(self, domain = ''):
-        #experimental
+        # experimental, Dont use it
         user_info = {'uid':'barney123',
                     'givenname':'Barney',
                     'cn':'barney123',
@@ -112,31 +99,15 @@ class myldap(object):
 
         data = [(x,v) for x,v in user_info.items()]
         dn='cn=Users,dc=ITFIPSALAS,dc=LOCAL'
-        #self.conn.add_s('uid=Administrador,cn=Users,dc=ITFIPSALAS,dc=LOCAL','uid=Administrador,cn=Users,dc=ITFIPSALAS,dc=LOCAL')
-        #ldif = modlist.addModlist(data)
+        # self.conn.add_s('uid=Administrador,cn=Users,dc=ITFIPSALAS,dc=LOCAL','uid=Administrador,cn=Users,dc=ITFIPSALAS,dc=LOCAL')
+        # ldif = modlist.addModlist(data)
         self.conn.add_s('uid=francis,ou=estudiantes,dc=ITFIPSALAS,dc=LOCAL', add_record)
-        #modlist.addModlist(user_info)
-        #self.conn.unbind()
+        # modlist.addModlist(user_info)
+        # self.conn.unbind()
 
-    #@staticmethod
-    def getsearch(self, ldapsearch, attributetosearch = attributedb):  # method(), ['mail','displayName','is you want, you can use another attributes that you specified in the ldapsearch method']
-        """
-
-        getsearch(self, ldapsearch, attributetosearch=attributedb) -> array
-
-        this method can return a array with the found information in the search, but need to ldapsearch data,
-        and another parameter for obtain the information
-
-        for example:
-        x=[['mail', ['narvaez@hotmail.com']], ['displayName', ['B2-E1']]]
-
-        where X is the result and you can use X[0][1][0]
-        and it should print the mail.. as narvaez@hotmail.com
-
-
-        attributetosearch: should be a array, and you must specify the attribute what want you search, for example
-        ['displayName'], but you could use, the 'show methods', stored in show_methods module
-        """
+    # @staticmethod
+    def getsearch(self, ldapsearch, attributetosearch = attributedb):  # method(), ['mail','displayName','is you want,
+        #  you can use another attributes that you specified in the ldapsearch method']
         separador = ldapsearch
         if separador != 0:
             foundit = []
@@ -149,10 +120,11 @@ class myldap(object):
             print 'Lo sentimos lo que has buscado no ha sido encontrado'
 
 
-#Nop = myldap('192.168.10.28', 'cn=Administrador,cn=Users,dc=ITFIPSALAS,dc=LOCAL', 'Itfip2015')
-#print('fin')
-#consulta = Nop.ldapsearch(search_by_name('admin'),domain='WWW.ITFIPSALAS.LOCAL')
-#print Nop.getsearch(consulta,show_mail())
+# Example
+# Nop = myldap('192.168.10.28', 'cn=Administrador,cn=Users,dc=ITFIPSALAS,dc=LOCAL', 'Itfip2015')
+# print('fin')
+# consulta = Nop.ldapsearch(search_by_name('admin'),domain='WWW.ITFIPSALAS.LOCAL')
+# print Nop.getsearch(consulta,show_mail())
 
 
-#Nop.ldapadd()
+# Nop.ldapadd() Dont use it
