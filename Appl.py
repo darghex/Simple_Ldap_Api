@@ -26,7 +26,7 @@ class myldap(object):
         """
         try:
             self.conn=ldap.initialize("ldap://"+ip+":"+port)
-            self.conn.simple_bind(dn,password)  # simple bind changed
+            self.conn.simple_bind(dn, password)  # simple bind changed
             print self.conn.whoami_s()
         except:
             print('Error al conectar a ldap')
@@ -41,7 +41,6 @@ class myldap(object):
         atrributeandsearch: is a tuple (x=n) where x is the attribute and n the value for search.. For example
         I want search (mail=narvaez@hotmail.com) or you can use, the 'search methods' stored in search_methods module...
         with methods only should write, search_by_mail(narvaez@hotmail.com)...according select function
-
 
         **kwargs could specify the domain that you want use, for example, ... domain='dc=itfip,dc=local'
         or anything url, domain='www.myexample.com'
@@ -71,6 +70,7 @@ class myldap(object):
             #self.conn.unbind(), changed because need the conections for ldapadd
 
     def ldapadd(self, domain = ''):
+        #experimental
         user_info = {'uid':'barney123',
                     'givenname':'Barney',
                     'cn':'barney123',
@@ -123,7 +123,9 @@ class myldap(object):
 
         getsearch(self, ldapsearch, attributetosearch=attributedb) -> array
 
-        this method  also can return a array with the found info but need to ldapsearch data, and another parameter for obtain the information
+        this method can return a array with the found information in the search, but need to ldapsearch data,
+        and another parameter for obtain the information
+
         for example:
         x=[['mail', ['narvaez@hotmail.com']], ['displayName', ['B2-E1']]]
 
