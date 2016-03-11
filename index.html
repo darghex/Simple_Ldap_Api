@@ -70,8 +70,11 @@ centralization of data through ldap protocol.</p>
 on top of that, allow data query, and other functions such as, add and modify data, but are still experimentals.</p>
 <dl class="docutils">
 <dt>Attributes:</dt>
-<dd>conn (instance): instanced connection of ldap object.
-domain (str): DN converted to domain with helpful method.</dd>
+<dd><div class="first last line-block">
+<div class="line">conn (instance): instanced connection of ldap object.</div>
+<div class="line">domain (str): DN converted to domain with helpful method.</div>
+</div>
+</dd>
 </dl>
 <dl class="method">
 <dt id="Appl.Myldap.__init__">
@@ -79,23 +82,29 @@ domain (str): DN converted to domain with helpful method.</dd>
 <dd><p>In the constructor define the sensitive data for Active Directory connection, then call to _connect().</p>
 <dl class="docutils">
 <dt>Args:</dt>
-<dd>ip (str): ip address.
-dn (str): Distinguished Name.
-_password (str): User password.
-port (str): connection port.</dd>
+<dd><div class="first last line-block">
+<div class="line">ip (str): ip address.</div>
+<div class="line">dn (str): Distinguished Name.</div>
+<div class="line">_password (str): User password.</div>
+<div class="line">port (str): connection port.</div>
+</div>
+</dd>
 <dt>Attributes:</dt>
-<dd><p class="first">ip (str): ip address of domain server.
-dn (str): is a sequence of relative distinguished names (RDN) connected by commas, thus must contain</p>
-<blockquote>
-<div>administrator user locate and Domain.</div></blockquote>
-<p class="last">_password (str): you must be specify a adminstrator user of Domain in the Active Directory.
-port (str): Active Directory Domain Services Port.</p>
+<dd><div class="first last line-block">
+<div class="line">ip (str): ip address of domain server.</div>
+<div class="line">dn (str): is a sequence of relative distinguished names (RDN) connected by commas, thus must contain
+administrator user locate and Domain.</div>
+<div class="line">_password (str): you must be specify a adminstrator user of Domain in the Active Directory.</div>
+<div class="line">port (str): Active Directory Domain Services Port.</div>
+</div>
 </dd>
 </dl>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference external" href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa366101%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/windows/desktop/aa366101%28v=vs.85%29.aspx</a>
-<a class="reference external" href="https://technet.microsoft.com/en-us/library/dd772723%28v=ws.10%29.aspx">https://technet.microsoft.com/en-us/library/dd772723%28v=ws.10%29.aspx</a></p>
+<div class="last line-block">
+<div class="line"><a class="reference external" href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa366101%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/windows/desktop/aa366101%28v=vs.85%29.aspx</a></div>
+<div class="line"><a class="reference external" href="https://technet.microsoft.com/en-us/library/dd772723%28v=ws.10%29.aspx">https://technet.microsoft.com/en-us/library/dd772723%28v=ws.10%29.aspx</a></div>
+</div>
 </div>
 <dl class="docutils">
 <dt>Example:</dt>
@@ -124,15 +133,27 @@ port (str): Active Directory Domain Services Port.</p>
 <dd><p>Take the dictionary result of ldapsearch, and make reorganization in a list.</p>
 <dl class="docutils">
 <dt>Args:</dt>
-<dd>_resultssearch (dict): Iterable data.
-attrib_toshow (list of str): Filter data according to attributes.</dd>
+<dd><div class="first last line-block">
+<div class="line">_resultssearch (dict): Iterable data.</div>
+<div class="line">attrib_toshow (list of str): Filter data according to attributes.</div>
+</div>
+</dd>
 <dt>Attributes:</dt>
-<dd>_resultssearch (dict): It contains human readable data about search.
-attrib_toshow (list): Use attributes with comma separate what you need get.</dd>
+<dd><div class="first last line-block">
+<div class="line">_resultssearch (dict): It contains human readable data about search.</div>
+<div class="line">attrib_toshow (list): Use attributes with comma separate what you need get.</div>
+</div>
+</dd>
 <dt>Returns:</dt>
-<dd>_foundit(list): Filtered list of dict of _resultssearch.</dd>
+<dd><div class="first last line-block">
+<div class="line">_foundit(list): Filtered list of dict of _resultssearch.</div>
+</div>
+</dd>
 <dt>Raises:</dt>
-<dd>LookupError: if didn&#8217;t find something as a result of _resultssearch.</dd>
+<dd><div class="first last line-block">
+<div class="line">LookupError: if didn&#8217;t find something as a result of _resultssearch.</div>
+</div>
+</dd>
 </dl>
 </dd></dl>
 
@@ -143,18 +164,20 @@ attrib_toshow (list): Use attributes with comma separate what you need get.</dd>
 that then is filtered to taste by user.</p>
 <dl class="docutils">
 <dt>Args:</dt>
-<dd>attrib_forsearch (str): Attribute with value for search all data.
-attrib_toshow (list of str): Filter data according to attributes.
-<a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs: Domain if need be changed (optional).</dd>
+<dd><div class="first last line-block">
+<div class="line">attrib_forsearch (str): Attribute with value for search all data.</div>
+<div class="line">attrib_toshow (list of str): Filter data according to attributes.</div>
+<div class="line"><a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs: Domain if need be changed (optional).</div>
+</div>
+</dd>
 <dt>Attributes:</dt>
-<dd><dl class="first docutils">
-<dt>attrib_forsearch (str): Its composed by two importants parts.</dt>
-<dd>firts, the attribute of domain for try search, secondly, the value for search all data.</dd>
-</dl>
-<p>attrib_toshow (list): Use attributes with comma separate what you need get.
-<a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs: It is used for change default domain of search,</p>
-<blockquote class="last">
-<div>you can use url as domain or distinguishedName, use domain=&#8217;dn_or_url&#8217;.</div></blockquote>
+<dd><div class="first last line-block">
+<div class="line">attrib_forsearch (str): Its composed by two importants parts.
+firts, the attribute of domain for try search, secondly, the value for search all data.</div>
+<div class="line">attrib_toshow (list): Use attributes with comma separate what you need get.</div>
+<div class="line"><a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs: It is used for change default domain of search,
+you can use url as domain or distinguishedName, use domain=&#8217;dn_or_url&#8217;.</div>
+</div>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -177,8 +200,10 @@ attrib_toshow (list of str): Filter data according to attributes.
 </div>
 <dl class="docutils">
 <dt>Example:</dt>
-<dd><p class="first">should use authentified object of myldap and then try search:
-without help modules.</p>
+<dd><div class="first line-block">
+<div class="line">should use authentified object of myldap and then try search:</div>
+<div class="line">without help modules.</div>
+</div>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">auth_object</span><span class="o">.</span><span class="n">ldapsearch</span><span class="p">(</span><span class="s1">&#39;mail=mailfor@search.com&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;distinguishedName&#39;</span><span class="p">])</span>
 <span class="go">[[&#39;distinguishedName&#39;, &#39;CN=name_user,CN=Users,DC=owner,DC=local&#39;]]</span>
 </pre></div>
